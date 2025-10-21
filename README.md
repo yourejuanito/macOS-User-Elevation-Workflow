@@ -147,17 +147,17 @@ sudo ./elevate-user.sh
 
 	#### Dialogs of scripts once ran. 
 
-	Initial Promtp the user gets once the script successfully runs. 
-	![](/Users/jdev/Desktop/macOS-Dev/Github-Repos/macOS-User-Elevation-Workflow/images/image1.png)
+	Initial prompt the user gets once the script successfully runs. 
+	![](https://raw.githubusercontent.com/yourejuanito/macOS-User-Elevation-Workflow/refs/heads/main/images/image1.png?token=GHSAT0AAAAAADNMR5E64CWS3NSHFKAMZLCI2HW2BVQ)
  
 	If the user enters the REQ number incorrectly or not exactly to what is specified in the script. 
-	![](/Users/jdev/Desktop/macOS-Dev/Github-Repos/macOS-User-Elevation-Workflow/images/image2.png)
+	![](https://raw.githubusercontent.com/yourejuanito/macOS-User-Elevation-Workflow/refs/heads/main/images/image2.png?token=GHSAT0AAAAAADNMR5E67SFLNHNYMTUA4BJS2HW2CGA)
 
 	Elevation confirmation prompt when the user is promoted. 
-	![](/Users/jdev/Desktop/macOS-Dev/Github-Repos/macOS-User-Elevation-Workflow/images/image3.png)
+	![](https://raw.githubusercontent.com/yourejuanito/macOS-User-Elevation-Workflow/refs/heads/main/images/image3.png?token=GHSAT0AAAAAADNMR5E6NV3LO6A6RIS7BEPI2HW2CXQ)
 
-	Promp user gets when the specified user in the initial prompt is already and administrator. 
-	![](/Users/jdev/Desktop/macOS-Dev/Github-Repos/macOS-User-Elevation-Workflow/images/image4.png)
+	Prompt user gets when the specified user in the initial prompt is already and administrator. 
+	![](https://raw.githubusercontent.com/yourejuanito/macOS-User-Elevation-Workflow/refs/heads/main/images/image4.png?token=GHSAT0AAAAAADNMR5E6466NJE6FCXM3QQOW2HW2DAQ)
 
 ### Sudoers CLI Grant (Service Desk / Advanced)
 ```bash
@@ -170,13 +170,13 @@ sudo ./elevate-user-cli.sh
 	#### Dialog prompts when CLI provilges are granted. 
 	
 	Initial prompt the user sees when the script runs. 
-	![](/Users/jdev/Desktop/macOS-Dev/Github-Repos/macOS-User-Elevation-Workflow/images/image2-1.png)
+	![](https://raw.githubusercontent.com/yourejuanito/macOS-User-Elevation-Workflow/refs/heads/main/images/image2-1.png?token=GHSAT0AAAAAADNMR5E7TXJT6OB7VJFZ654K2HW2EYQ)
 	
 	If user does not check-off the checkbox they will get this error prompt. 
-	![](/Users/jdev/Desktop/macOS-Dev/Github-Repos/macOS-User-Elevation-Workflow/images/image2-2.png)
+	![](https://raw.githubusercontent.com/yourejuanito/macOS-User-Elevation-Workflow/refs/heads/main/images/image2-2.png?token=GHSAT0AAAAAADNMR5E7GSGRRHUIMCUN43G42HW2DOQ)
 	
 	Prompt displayed once the user has been granted access. 
-	![](/Users/jdev/Desktop/macOS-Dev/Github-Repos/macOS-User-Elevation-Workflow/images/image2-3.png)
+	![](https://raw.githubusercontent.com/yourejuanito/macOS-User-Elevation-Workflow/refs/heads/main/images/image2-3.png?token=GHSAT0AAAAAADNMR5E7UUL6H54JTJIRPDJQ2HW2DHQ)
 
 ---
 
