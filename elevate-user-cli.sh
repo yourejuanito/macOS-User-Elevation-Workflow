@@ -88,7 +88,7 @@ while [[ $ATTEMPT -le $MAX_ATTEMPTS ]]; do
     --button1text "Grant sudo to $CONSOLE_USER" \
     --button2text "Cancel" \
     --message "You are about to grant **command-line administrative privileges** to the currently logged-in user:\n\n**User:** $CONSOLE_USER\n\n**Security Warning**\n\n   • This allows the user to run commands as root using 'sudo'.\n\n   • Misuse can result in system compromise or data loss.\n\n   • Only proceed if this access is approved and necessary.\n\nAccess can be revoked by removing the file in /etc/sudoers.d/$CONSOLE_USER." \
-    --checkbox "I understand the security risks and have verified approvals.,required" \
+    --checkbox "I understand the security risks and have verified approvals.,Required*" \
     --json > "$JSON_TMP"
   DLG_EC=$?
 

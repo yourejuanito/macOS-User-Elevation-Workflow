@@ -95,7 +95,7 @@ json_get_value() {
 
 show_error() {
   "$DIALOG" --title "Invalid Input" --icon "warning" \
-    --message "$1" --button1text "OK" --width 520 --height 170 >/dev/null 2>&1
+    --message "$1" --button1text "OK" --width 600 --height 200 >/dev/null 2>&1
 }
 
 # -------------------- Prompt + validation loop --------------------

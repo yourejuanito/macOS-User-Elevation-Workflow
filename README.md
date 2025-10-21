@@ -120,7 +120,7 @@ All scripts integrate with **SwiftDialog** for user interaction, maintain audit 
 ## 🔐 Security Features
 
 - **Demotion Script**: prevents accidental demotion of service accounts.  
-- **Elevation Script**: requires both username + valid incident number (`CBSD-######`) + security acknowledgment.  
+- **Elevation Script**: requires both username + valid incident number (`REQ-######`) + security acknowledgment.  
 - **Sudoers Grant Script**: validates sudoers entries with `visudo` and requires explicit acknowledgment.  
 - All actions are logged and auditable.  
 
@@ -132,7 +132,10 @@ All scripts integrate with **SwiftDialog** for user interaction, maintain audit 
 ```bash
 sudo ./demote-users.sh
 ```
-- Removes local admin rights from all non-protected accounts.
+- Removes local admin rights from all non-protected accounts. There is no user interactivity as this would be done in a remediation workflow. 
+
+	***protected accounts are controlled in line 30 of the script.*** 
+
 
 ### Elevation (Service Desk)
 ```bash
@@ -142,17 +145,43 @@ sudo ./elevate-user.sh
 - Requires acknowledgment.  
 - Adds user to `admin` group.  
 
+	#### Dialogs of scripts once ran. 
+
+	Initial Promtp the user gets once the script successfully runs. 
+	![](/Users/jdev/Desktop/macOS-Dev/Github-Repos/macOS-User-Elevation-Workflow/images/image1.png)
+ 
+	If the user enters the REQ number incorrectly or not exactly to what is specified in the script. 
+	![](/Users/jdev/Desktop/macOS-Dev/Github-Repos/macOS-User-Elevation-Workflow/images/image2.png)
+
+	Elevation confirmation prompt when the user is promoted. 
+	![](/Users/jdev/Desktop/macOS-Dev/Github-Repos/macOS-User-Elevation-Workflow/images/image3.png)
+
+	Promp user gets when the specified user in the initial prompt is already and administrator. 
+	![](/Users/jdev/Desktop/macOS-Dev/Github-Repos/macOS-User-Elevation-Workflow/images/image4.png)
+
 ### Sudoers CLI Grant (Service Desk / Advanced)
 ```bash
-sudo ./grant-sudo-for-console-user.sh
+sudo ./elevate-user-cli.sh
 ```
 - Prompts with security warning.  
 - Requires acknowledgment.  
 - Grants logged-in user CLI `sudo` rights.  
 
----
+	#### Dialog prompts when CLI provilges are granted. 
+	
+	Initial prompt the user sees when the script runs. 
+	![](/Users/jdev/Desktop/macOS-Dev/Github-Repos/macOS-User-Elevation-Workflow/images/image2-1.png)
+	
+	If user does not check-off the checkbox they will get this error prompt. 
+	![](/Users/jdev/Desktop/macOS-Dev/Github-Repos/macOS-User-Elevation-Workflow/images/image2-2.png)
+	
+	Prompt displayed once the user has been granted access. 
+	![](/Users/jdev/Desktop/macOS-Dev/Github-Repos/macOS-User-Elevation-Workflow/images/image2-3.png)
 
 ---
+
+
+
 
 ## Disclaimer
 These scripts are intended for internal IT workflows.  
