@@ -7,7 +7,7 @@
 
 set -o pipefail
 
-DRY_RUN=0
+DRY_RUN=
 [[ "${1-}" == "--dry-run" ]] && DRY_RUN=1
 
 # Require root
@@ -47,8 +47,8 @@ skipped=0
 log "Starting demotion. Dry run: $DRY_RUN"
 log "Exclusions: $EXCLUSIONS"
 
-# Iterate local accounts with UID >= 501 (normal users)
-while IFS= read -r user; do
+# Iterate through each local account (UID >= 501)
+for user in $(dscl . list /Users UniqueID 2>/dev/null | awk '$2>=501 {print $1}'); do
   if is_excluded "$user"; then
     log "Skip '$user' (excluded)"
     ((skipped++))
@@ -73,7 +73,6 @@ while IFS= read -r user; do
     log "Skip '$user' (not in admin)"
     ((skipped++))
   fi
-done < <(dscl . list /Users UniqueID 2>/dev/null | awk '$2>=501 {print $1}')
-
+done
 log "Summary: demoted=$demoted skipped=$skipped"
 exit 0
